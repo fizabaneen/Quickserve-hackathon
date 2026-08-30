@@ -100,7 +100,7 @@ Run the SQL script provided in `supabase_schema.sql` in your Supabase Query Edit
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/fizabaneen/Quickserve-hackathon.git
+   git clone https://github.com/fizabaneen/Quickserve-hackathon
    cd Quickserve-hackathon
    ```
 

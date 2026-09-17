@@ -17,7 +17,7 @@ import { NotFound } from './pages/NotFound'
 
 function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors">
+    <div className="min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 transition-colors">
       <Navbar />
       <main className="flex-grow">{children}</main>
       <Footer />

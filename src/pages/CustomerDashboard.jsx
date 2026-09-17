@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Sparkles, ArrowRight, Wrench } from 'lucide-react'
+import { Sparkles, ArrowRight, Wrench, ShieldCheck, QrCode } from 'lucide-react'
 import { api } from '../services/api'
 import { useAuth } from '../context/AuthContext'
 import { BookingCard } from '../components/BookingCard'
@@ -44,30 +44,35 @@ export function CustomerDashboard() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Dashboard Banner */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white dark:bg-gray-900 rounded-3xl border border-gray-200/80 dark:border-gray-800 p-8 shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white rounded-3xl border border-stone-200/90 p-8 shadow-xs">
         <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-400 text-xs font-bold mb-2">
-            <Sparkles size={13} /> Customer Portal
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pastel-yellow text-stone-900 text-xs font-bold mb-2 border border-amber-300">
+            <ShieldCheck size={13} className="text-emerald-700" />
+            <span>Customer Security Portal</span>
           </div>
-          <h1 className="text-3xl font-black text-gray-900 dark:text-white">Customer Dashboard</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Track your appointment status, manage bookings, and leave reviews upon job completion.
+          <h1 className="text-3xl font-black text-stone-900 tracking-tight">Customer Dashboard</h1>
+          <p className="text-xs sm:text-sm text-stone-500 mt-1">
+            Track appointment status in real-time, view your Doorstep QR Passes, and leave verified reviews.
           </p>
         </div>
         <Link
           to="/"
-          className="inline-flex items-center gap-2 px-5 py-3 bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm rounded-2xl shadow-lg shadow-teal-600/20 transition-all shrink-0"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs rounded-full shadow-md transition-all shrink-0 hover:scale-105"
         >
-          <span>Book Service</span>
-          <ArrowRight size={16} />
+          <span>Book New Service</span>
+          <ArrowRight size={14} />
         </Link>
       </div>
 
       {/* Bookings List */}
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-bold text-gray-900 dark:text-white">My Active & Past Bookings ({bookings.length})</h2>
-          <span className="text-xs text-gray-500">Synced with Supabase database</span>
+          <h2 className="text-lg font-black text-stone-900">
+            My Appointments & Security Passes ({bookings.length})
+          </h2>
+          <span className="text-xs text-stone-500 flex items-center gap-1">
+            <QrCode size={13} /> QR Verified System
+          </span>
         </div>
 
         {loading ? (
@@ -91,11 +96,11 @@ export function CustomerDashboard() {
             })}
           </div>
         ) : (
-          <div className="text-center py-16 bg-white dark:bg-gray-900 rounded-3xl border border-gray-200/80 dark:border-gray-800 p-8 space-y-3">
-            <Wrench className="mx-auto text-gray-400" size={36} />
-            <h3 className="text-base font-bold text-gray-900 dark:text-white">No bookings yet</h3>
-            <p className="text-xs text-gray-500">Browse service professionals and request your first service appointment.</p>
-            <Link to="/" className="inline-block text-teal-600 font-bold text-xs pt-2">
+          <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8 space-y-3">
+            <Wrench className="mx-auto text-stone-400" size={36} />
+            <h3 className="text-base font-black text-stone-900">No bookings yet</h3>
+            <p className="text-xs text-stone-500">Browse service professionals and request your first verified appointment.</p>
+            <Link to="/" className="inline-block text-stone-900 font-bold text-xs pt-2 underline">
               Browse Service Professionals →
             </Link>
           </div>

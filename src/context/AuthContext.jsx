@@ -42,6 +42,20 @@ export function AuthProvider({ children }) {
     return newUser
   }
 
+  const loginWithGoogle = (selectedRole = 'customer') => {
+    const defaultId = selectedRole === 'provider' ? '10000000-0000-0000-0000-000000000001' : 'cust-101'
+    const googleUser = {
+      id: defaultId,
+      email: 'alex.miller@gmail.com',
+      name: selectedRole === 'provider' ? 'Marcus Chen (Pro)' : 'Alex Miller',
+      role: selectedRole,
+      isGoogleAuth: true,
+      avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80',
+    }
+    setUser(googleUser)
+    return googleUser
+  }
+
   const register = (email, role, name) => {
     return login(email, role, name)
   }
@@ -62,7 +76,17 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, role: user?.role || 'customer', login, register, logout, switchRole }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        role: user?.role || 'customer',
+        login,
+        register,
+        loginWithGoogle,
+        logout,
+        switchRole,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   )

@@ -10,6 +10,57 @@ export const INITIAL_CATEGORIES = [
   'Computer Repair',
 ]
 
+export const CATEGORY_METADATA = {
+  Electrician: {
+    title: 'Electrical & Lighting',
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80',
+    description: 'Wiring, fixtures, breaker panels, safety inspections and emergency power repairs.',
+    startingPrice: 85,
+    tag: 'Licensed Pros',
+    bgColor: '#FEF6DA',
+  },
+  Plumber: {
+    title: 'Plumbing & Repairs',
+    image: 'https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=600&q=80',
+    description: 'Fast leak fixes, drain clearing, water heaters, and pipe installations.',
+    startingPrice: 72,
+    tag: 'Same Day',
+    bgColor: '#E8F0FE',
+  },
+  Cleaner: {
+    title: 'Cleaning & Sanitation',
+    image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80',
+    description: 'Deep house cleaning, eco-friendly sanitization, and flexible recurring schedules.',
+    startingPrice: 45,
+    tag: 'Most Popular',
+    bgColor: '#E6F4EA',
+  },
+  'AC Technician': {
+    title: 'AC & HVAC Servicing',
+    image: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?auto=format&fit=crop&w=600&q=80',
+    description: 'AC unit diagnostics, filter replacements, gas refilling, and seasonal maintenance.',
+    startingPrice: 68,
+    tag: 'Guaranteed',
+    bgColor: '#FCE8E6',
+  },
+  Painter: {
+    title: 'Painting & Renovation',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80',
+    description: 'Interior wall painting, texture finishes, waterproof coatings, and decorative touch-ups.',
+    startingPrice: 65,
+    tag: 'Clean Work',
+    bgColor: '#FEF6DA',
+  },
+  'Computer Repair': {
+    title: 'Computer & Tech Repair',
+    image: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&w=600&q=80',
+    description: 'Laptop hardware fixes, virus removal, SSD upgrades, and home network setups.',
+    startingPrice: 55,
+    tag: 'Fast Diagnosis',
+    bgColor: '#E8F0FE',
+  },
+}
+
 export const INITIAL_PROVIDERS = [
   {
     id: '10000000-0000-0000-0000-000000000001',

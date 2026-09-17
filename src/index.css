@@ -6,23 +6,84 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
 
   body {
-    @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen font-sans antialiased selection:bg-teal-500 selection:text-white;
+    background-color: #FAF8F5;
+    color: #18181B;
+    min-height: 100vh;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    selection-background-color: #18181B;
+    selection-color: #FFFFFF;
   }
 }
 
-/* Custom Utilities */
-.glass-panel {
-  @apply backdrop-blur-md bg-white/70 dark:bg-gray-900/70 border border-gray-200/80 dark:border-gray-800;
+/* Custom Soft Pastel Palette Tokens matching reference design */
+.bg-pastel-yellow {
+  background-color: #FEF6DA;
+}
+.bg-pastel-coral {
+  background-color: #FCE8E6;
+}
+.bg-pastel-mint {
+  background-color: #E6F4EA;
+}
+.bg-pastel-blue {
+  background-color: #E8F0FE;
+}
+.bg-pastel-cream {
+  background-color: #FAF8F5;
 }
 
-@keyframes pulse-subtle {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+/* Elegant Pill Buttons & Cards */
+.btn-pill-dark {
+  background-color: #18181B;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-pill-dark:hover {
+  background-color: #27272A;
+  transform: translateY(-1px);
+}
+.btn-pill-dark:active {
+  transform: translateY(0px);
 }
 
-.animate-pulse-subtle {
-  animation: pulse-subtle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+.btn-pill-light {
+  background-color: #FFFFFF;
+  color: #18181B;
+  border: 1px solid #E4E4E7;
+  border-radius: 9999px;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-pill-light:hover {
+  background-color: #F4F4F5;
+}
+
+/* Glass & Card Utilities */
+.card-soft {
+  background-color: #FFFFFF;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.card-soft:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.07);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
 }
